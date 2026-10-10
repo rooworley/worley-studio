@@ -40,16 +40,12 @@ a { color: inherit; }
 .btn-ink:hover { background: var(--accent); border-color: var(--accent); }
 .btn-line:hover { background: var(--yellow); }
 
-/* Hero: the overprinted wordmark is the page's one loud moment */
+/* Hero: crisp wordmark for easy reading */
 .hero { padding: 56px 0 72px; border-bottom: 1px solid var(--rule); overflow: hidden; }
 .overprint { position: relative; font-family: var(--serif); font-weight: 400; font-size: clamp(4.5rem, 17vw, 15rem); line-height: 0.86; letter-spacing: -0.02em; margin: 0; }
 .ink { display: block; }
-.ink-yellow { color: var(--yellow); position: absolute; inset: 0; transform: translate(0.06em, 0.045em); }
+.ink-yellow { display: none; }
 .ink-blue { color: var(--accent); position: relative; mix-blend-mode: multiply; }
-@media (prefers-reduced-motion: no-preference) {
-  .ink-yellow { animation: register 0.9s cubic-bezier(.2,.7,.2,1) 0.15s both; }
-  @keyframes register { from { transform: translate(0.16em, 0.12em); opacity: 0; } to { transform: translate(0.06em, 0.045em); opacity: 1; } }
-}
 .hero-foot { margin-top: 48px; display: flex; justify-content: space-between; align-items: end; gap: 32px; flex-wrap: wrap; }
 .lead { font-size: 1.3rem; max-width: 30em; line-height: 1.5; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
