@@ -67,6 +67,13 @@ header { box-shadow: 0 4px 18px rgba(17,17,17,0.06); }
   .ws-nav a { padding: 14px 6px !important; border-bottom: 1px solid #11111112; }
   .ws-nav a.ws-btn { margin: 14px 0 6px !important; text-align: center; border-bottom: 0; }
 }
+/* Mobile: wrap the "Made for" pills instead of scrolling, and drop card tags below the text */
+@media (max-width: 760px) {
+  .ws-madefor-scroll { overflow: visible !important; }
+  .ws-madefor-list { flex-wrap: wrap !important; width: auto !important; max-width: 100%; justify-content: center; gap: 10px 8px !important; padding: 0 !important; }
+  .ws-card-foot { flex-direction: column !important; align-items: flex-start !important; padding: 22px 22px 24px !important; }
+  .ws-card-tags { flex-shrink: 1 !important; }
+}
 details summary { cursor: pointer; list-style: none; }
 details summary::-webkit-details-marker { display: none; }
 details[open] .ws-plus { transform: rotate(45deg); }
@@ -132,7 +139,7 @@ input:focus, textarea:focus, select:focus, a:focus-visible, button:focus-visible
   <div style="background: #111111; color: #F5F2EA; padding: clamp(32px, 4vw, 44px) clamp(16px, 4vw, 48px);">
     <div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;">
       <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 28px); letter-spacing: -0.01em; color: #F6C033;">Made for</span>
-      <div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin;"><div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 8px; width: max-content; margin: 0 auto; padding: 2px 2px 6px;">
+      <div class="ws-madefor-scroll" style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin;"><div class="ws-madefor-list" style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 8px; width: max-content; margin: 0 auto; padding: 2px 2px 6px;">
         <a href="#work" class="ws-pill" style="text-decoration: none; color: #111111; background: #F5F2EA; border: 1.5px solid transparent; border-radius: 999px; padding: 8px 16px; font-weight: 600; font-size: 13.5px; white-space: nowrap;">Cafés</a>
         <a href="#work" class="ws-pill" style="text-decoration: none; color: #111111; background: #F5F2EA; border: 1.5px solid transparent; border-radius: 999px; padding: 8px 16px; font-weight: 600; font-size: 13.5px; white-space: nowrap;">Salons</a>
         <a href="#work" class="ws-pill" style="text-decoration: none; color: #111111; background: #F5F2EA; border: 1.5px solid transparent; border-radius: 999px; padding: 8px 16px; font-weight: 600; font-size: 13.5px; white-space: nowrap;">Trades</a>
@@ -159,12 +166,12 @@ input:focus, textarea:focus, select:focus, a:focus-visible, button:focus-visible
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px;">
       <a href="https://rainyresale.com" class="ws-card" style="grid-column: span 1; display: flex; flex-direction: column; text-decoration: none; color: #111111; border: 2px solid transparent; border-radius: 24px; overflow: hidden; background: #ffffff; transition: border-color .2s;">
         <div style="aspect-ratio: 16 / 10; background: #1E3A4C; overflow: hidden;"><img src="/rainy-resale-mockup.webp" alt="Rainy Resale homepage" style="width: 100%; height: 100%; object-fit: cover; object-position: top;"></div>
-        <div style="padding: 24px 28px 28px; display: flex; justify-content: space-between; align-items: start; gap: 16px;">
+        <div class="ws-card-foot" style="padding: 24px 28px 28px; display: flex; justify-content: space-between; align-items: start; gap: 16px;">
           <div>
             <h3 style="margin: 0 0 6px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 30px; letter-spacing: -0.02em;">Rainy Resale</h3>
             <p style="margin: 0; color: #3d3d3d;">Brand identity and website for a Tacoma online resale business.</p>
           </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px; flex-shrink: 0;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 8px 12px; border-radius: 999px; background: #F6C033;">Brand</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 8px 12px; border-radius: 999px; background: #F6C033;">Web</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 8px 12px; border-radius: 999px; background: #F6C033;">SEO</span></div>
+          <div class="ws-card-tags" style="display: flex; flex-wrap: wrap; gap: 8px; flex-shrink: 0;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 8px 12px; border-radius: 999px; background: #F6C033;">Brand</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 8px 12px; border-radius: 999px; background: #F6C033;">Web</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 8px 12px; border-radius: 999px; background: #F6C033;">SEO</span></div>
         </div>
       </a>
       <a href="#contact" class="ws-card" style="position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; text-decoration: none; color: #111111; border: 2px dashed #11111155; border-radius: 24px; padding: 36px; min-height: 360px; transition: border-color .2s;">
