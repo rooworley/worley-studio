@@ -417,5 +417,16 @@ input:focus, textarea:focus, select:focus, a:focus-visible, button:focus-visible
   window.addEventListener('resize', function () { if (window.innerWidth > 860) setOpen(false); });
 })();
 </script>
+<script>
+(function () {
+  // Analytics events: email clicks and project form submits (no personal data sent).
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="mailto:admin@worleystudio.dev"]');
+    if (a && window.gtag) { gtag('event', 'contact_email_click'); }
+  });
+  var f = document.querySelector('#contact form');
+  if (f) { f.addEventListener('submit', function () { if (window.gtag) { gtag('event', 'generate_lead', { form_name: 'start_a_project' }); } }); }
+})();
+</script>
 </body>
 </html>
