@@ -69,7 +69,7 @@ header { box-shadow: 0 4px 18px rgba(17,17,17,0.06); }
 .ws-menu-toggle[aria-expanded="true"] .ws-bar:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
 .ws-menu-toggle[aria-expanded="true"] .ws-bar:nth-child(2) { opacity: 0; }
 .ws-menu-toggle[aria-expanded="true"] .ws-bar:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-@media (max-width: 860px) {
+@media (max-width: 1000px) {
   .ws-menu-toggle { display: flex; }
   .ws-nav { display: none !important; width: 100%; flex-direction: column !important; align-items: stretch !important; gap: 0 !important; padding: 8px 0 4px; border-top: 1px solid #11111122; }
   .ws-nav.is-open { display: flex !important; }
@@ -136,6 +136,7 @@ input:focus, textarea:focus, select:focus, a:focus-visible, button:focus-visible
       </button>
       <nav id="site-nav" class="ws-nav" aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-weight: 500; font-size: 16px;">
         <a href="#work" style="text-decoration: none; padding: 12px 10px;">Work</a>
+        <a href="/concepts" style="text-decoration: none; padding: 12px 10px;">Concepts</a>
         <a href="#services" style="text-decoration: none; padding: 12px 10px;">Services &amp; pricing</a>
         <a href="#process" style="text-decoration: none; padding: 12px 10px;">Process</a>
         <a href="#about" style="text-decoration: none; padding: 12px 10px;">About</a>
@@ -446,7 +447,7 @@ input:focus, textarea:focus, select:focus, a:focus-visible, button:focus-visible
   btn.addEventListener('click', function () { setOpen(btn.getAttribute('aria-expanded') !== 'true'); });
   nav.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setOpen(false); btn.focus(); } });
-  window.addEventListener('resize', function () { if (window.innerWidth > 860) setOpen(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 1000) setOpen(false); });
 })();
 </script>
 <script>
